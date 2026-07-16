@@ -9,24 +9,20 @@ public class Bai7 {
     public static void main(String[] args) {
         int n;
         n = (int) Validation.getNumber("Mời nhập số nguyên dương n: ", 0, true);
-        List<Integer> nums = new ArrayList<>();
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
         for(int i = 0;i<n;i++){
             System.out.format("\nMời nhập số thứ %d: ",i+1);
             int num = (int) Validation.getNumber("",true);
-            nums.add(num);
-        }
-        int min = nums.get(0);
-        int max = nums.get(0);
-        for (int i = 0;i<nums.size();i++){
-            if(nums.get(i) > max) {
-                max = nums.get(i);
+            if(num > max) {
+                max = num;
             }
-            if(nums.get(i) <min){
-                min = nums.get(i);
+            if(num<min){
+                min = num;
             }
         }
-        System.out.format("Số nhỏ nhất trong list %s là: %d",nums.toString(),min);
-        System.out.format("\nSố lớn nhất trong list %s là: %d ",nums.toString(),max);
+        System.out.format("Số nhỏ nhất là: %d",min);
+        System.out.format("\nSố lớn nhất là: %d ",max);
 
     }
 }
